@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
+import { Table } from 'semantic-ui-react'
+import ProductList from './ProductList'
 
-function Products(params) {
+const Products = () => {
     let url = 'https://onedrop.today/products.json'
     let [products, setProducts] = useState([])
 
@@ -15,7 +17,7 @@ function Products(params) {
     console.log(products)
     return(
         <div>
-
+            <Table/>
         </div>
     )
     
