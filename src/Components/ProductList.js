@@ -1,10 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+import {Table} from 'semantic-ui-react'
 
 
-const ProductList = () => {
+const ProductList = (props) => {
+    
+
     return(
-        <div>
-        </div>
+        <Table>
+           <Table.Cell>{props.product.title}</Table.Cell>
+        </Table>
     )
 }
 
