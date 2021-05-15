@@ -15,19 +15,25 @@ const Products = () => {
     },[url])
 
     let filteredProducts = products.filter(product => product.variants[0] !== "0.00")
-            
-    let productList = filteredProducts.map(product =>
+    let sortedProducts = filteredProducts.sort((productA, productB) => {
+        if (Number(productA.variants[0].price) < Number(productB.variants[0].price)) {
+            return 1;
+        } else {
+            return -1;
+        }
+    })
+                
+    let productList = sortedProducts.map(product =>
          <Table.Row><ProductList product={product}/></Table.Row>)
     return(
         <div>
             <Table>
-                <Table.Header>
+                 <Table.Body>
+              
                     <Table.Row>
                         <Table.HeaderCell>Product</Table.HeaderCell>
                         <Table.HeaderCell>Price</Table.HeaderCell>
                     </Table.Row>
-                 </Table.Header>
-                 <Table.Body>
                     {productList}
                  </Table.Body>
             </Table>

@@ -3,12 +3,13 @@ import {Table} from 'semantic-ui-react'
 
 
 const ProductList = (props) => {
-    
-
+    // console.log(props.product.variants[0].price)
     return(
-        <Table>
+        <>
            <Table.Cell>{props.product.title}</Table.Cell>
-        </Table>
+
+           <Table.Cell>{props.product.variants[0].price}</Table.Cell>
+        </>
     )
 }
 
